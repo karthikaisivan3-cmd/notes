@@ -4,6 +4,7 @@ Django settings for notesharing project.
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,10 +85,10 @@ WSGI_APPLICATION = 'notesharing.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://notes_tntc_user:y8Pvn4iYZsZDD37QGdEPO5NUXlyFKrLK@dpg-d6sktq24d50c73bpt8og-a.singapore-postgres.render.com/notes_tntc',
+        conn_max_age=600
+    )
 }
 
 
