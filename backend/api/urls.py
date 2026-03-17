@@ -22,6 +22,9 @@ urlpatterns = [
     path('my/downloads/', views.my_downloads, name='my-downloads'),
     path('dashboard/', views.dashboard_stats, name='dashboard'),
     
+    # Health Check
+    path('health/', views.health_check, name='health-check'),
+    
     # Router URLs
     path('', include(router.urls)),
 ]

@@ -358,3 +358,10 @@ class NotificationViewSet(viewsets.ModelViewSet):
     def mark_all_read(self, request):
         self.get_queryset().update(is_read=True)
         return Response({'status': 'success'})
+# ==================== HEALTH CHECK ====================
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def health_check(request):
+    """Simple health check endpoint"""
+    return Response({'status': 'healthy', 'message': 'Backend is running'}, status=status.HTTP_200_OK)
