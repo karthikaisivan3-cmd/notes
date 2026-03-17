@@ -7,9 +7,8 @@ import '../models/models.dart';
 
 class ApiService {
   // Change this to your backend URL
-  static const String baseUrl = 'http://127.0.0.1:8000/api'; // For Android Emulator
-  // static const String baseUrl = 'http://localhost:8000/api'; // For iOS Simulator
-  // static const String baseUrl = 'http://YOUR_IP:8000/api'; // For physical device
+  static const String baseUrl = 'https://notes-5v22.onrender.com/api';
+  // static const String baseUrl = 'http://127.0.0.1:8000/api'; // For Local/Emulator
 
   String? _token;
 
